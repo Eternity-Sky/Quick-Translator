@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Translator",
+  "version": "1.0.0",
+  "description": "A convenient translation extension with text selection support and beautiful interface",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://api.fanyi.baidu.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
